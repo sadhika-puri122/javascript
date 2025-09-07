@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body style="background-color: white; font-size: 30px">
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+  </body>
+  <script>
+    const parent = document.querySelector(".parent");
+    //console.log(parent);
+    // console.log(parent.children); // HTMLCollection(4) [div.day, div.day, div.day, div.day]
+    // console.log(parent.children[0].innerHTML); // <div class="day">Monday</div>
+
+    // parent.children[0].style.color = "orange"; // Change the color of the first child to red
+    // console.log(parent.firstElementChild); // <div class="day">Monday</div>
+    // console.log(parent.lastElementChild); // <div class="day">Thursday</div>
+
+    const day1 = document.querySelector(".day");
+    console.log(day1); // <div class="day">Monday</div>
+    console.log(day1.parentElement); // <div class="parent">...</div>
+    console.log(day1.nextElementSibling); // will return the next sibling element, which is <div class="day">Tuesday</div>
+    console.log(day1.previousElementSibling); // will return null, as there is no previous sibling element
+
+    console.log("NODES: ", parent.childNodes); // will return all child nodes, including text nodes (whitespace between elements),
+    // there are 9 nodes in total including 5 text nodes (whitespace between elements) and 4 element nodes (the divs)
+  </script>
+</html>
